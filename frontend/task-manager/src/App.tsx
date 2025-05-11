@@ -4,7 +4,7 @@ import axios from 'axios';
 import { io } from 'socket.io-client';
 import noteIcon from "./assets/noteIcon.png";
 import plus from "./assets/plus.png";
-const socket = io('http://localhost:4000'); // WebSocket URL
+const socket = io('https://todo-6z8h.onrender.com'); // WebSocket URL
 
 interface Task {
   task: string;
@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/fetchAllTasks');
+        const response = await axios.get('https://todo-6z8h.onrender.com/fetchAllTasks');
         setTasks(response.data.tasks);
       } catch (error) {
         console.error('Error fetching tasks:', error);
